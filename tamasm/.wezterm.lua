@@ -2,7 +2,7 @@ local wezterm = require("wezterm")
 
 local config = wezterm.config_builder()
 
-config.font = wezterm.font("CaskaydiaMono Nerd Font")
+config.font = wezterm.font("CaskaydiaMono Nerd Font", { weight = "DemiLight" })
 config.font_size = 17
 
 config.enable_tab_bar = false
