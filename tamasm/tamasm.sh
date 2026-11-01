@@ -72,4 +72,4 @@ sketchybar --reload
 osascript -e "tell application \"System Events\" to set picture of every desktop to \"$PATH_TO_WALLPAPER\""
 
 # TODO_APP THEME
-sed -i '' '/^[[:space:]]*alias dod=/s|TEXTUAL_THEME=[^[:space:]"]*|TEXTUAL_THEME=catppuccin-frappe|' ~/.zshrc
+sed -i '' '/^[[:space:]]*alias dod=/s|TEXTUAL_THEME=[^[:space:]"]*|TEXTUAL_THEME=tamasm|' ~/.zshrc
