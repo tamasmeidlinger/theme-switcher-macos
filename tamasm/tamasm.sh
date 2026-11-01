@@ -24,22 +24,26 @@ sed -i '' \
   "s/\"workbench.colorTheme\": *\"[^\"]*\"/\"workbench.colorTheme\": \"$VSCODE_THEME\"/" \
   "$VSCODE_SETTINGS"
 
+jq '.["workbench.colorCustomizations"] = {}' "$VSCODE_SETTINGS" >"$VSCODE_SETTINGS.tmp" &&
+  mv "$VSCODE_SETTINGS.tmp" "$VSCODE_SETTINGS"
+
 jq --arg bg "$BG" '
   .["workbench.colorCustomizations"] = {
     "sideBar.background": $bg,
     "editor.lineHighlightBackground": $bg,
     "editor.background": $bg,
     "editorGutter.background": $bg,
-    "tab.activeBackground": "#292929",
-    "tab.activeForeground": "#ededed",
-    "tab.inactiveBackground": $bg,
-    "tab.border": $bg,
-    "tab.activeBorderTop": $bg,
+    "editorGroupHeader.connectedTabsBackground": $bg,
     "titleBar.activeBackground": $bg,
     "titleBar.inactiveBackground": $bg,
-    "editorGroupHeader.connectedTabsBackground": $bg,
+    "tab.activeBackground": $bg,
+    "tab.inactiveBackground": $bg,
+    "tab.border": $bg,
+    "tab.activeBorder": "#8BBADE",
     "activityBar.background": $bg,
-    "activityBar.activeBackground": "#292929"
+    "editorOverviewRuler.background": $bg,
+    "terminal.background": $bg,
+    "panel.background": $bg
   }
 ' "$VSCODE_SETTINGS" >"$VSCODE_SETTINGS.tmp" &&
   mv "$VSCODE_SETTINGS.tmp" "$VSCODE_SETTINGS"
