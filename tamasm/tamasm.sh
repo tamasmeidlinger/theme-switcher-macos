@@ -6,7 +6,7 @@ set -e
 THEME_DIR="$HOME/tools/theme-switcher/tamasm"
 VSCODE_SETTINGS="$HOME/Library/Application Support/Code/User/settings.json"
 VSCODE_THEME="Catppuccin Frappé"
-PATH_TO_WALLPAPER="$HOME/wallpapers/muci-ocsi-tamasm4.png"
+PATH_TO_WALLPAPER="$HOME/wallpapers/muci-ocsi-tamasm.png"
 BG="#292c35"
 
 # SKETCHY THEME
@@ -43,7 +43,8 @@ jq --arg bg "$BG" '
     "activityBar.background": $bg,
     "editorOverviewRuler.background": $bg,
     "terminal.background": $bg,
-    "panel.background": $bg
+    "panel.background": $bg,
+    "editorGroup.emptyBackground": "#292c35"
   }
 ' "$VSCODE_SETTINGS" >"$VSCODE_SETTINGS.tmp" &&
   mv "$VSCODE_SETTINGS.tmp" "$VSCODE_SETTINGS"
