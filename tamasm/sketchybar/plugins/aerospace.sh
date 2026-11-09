@@ -4,5 +4,5 @@
 # chmod +x ~/.config/sketchybar/plugins/aerospace.sh
 
 WORKSPACE=$(/opt/homebrew/bin/aerospace list-workspaces --focused)
-sketchybar --set $NAME label="$WORKSPACE" \
+sketchybar --set $NAME label="{ $WORKSPACE }" \
   label.font="CaskaydiaMono Nerd Font:Bold:14.0"
