@@ -2,7 +2,7 @@
 
 PLUGIN_DIR="$CONFIG_DIR/plugins"
 ITEM_DIR="$CONFIG_DIR/items"
-sketchybar --bar position=top height=32 blur_radius=30 color=0xff292c35 padding_left=6 padding_right=4
+sketchybar --bar position=top height=32 blur_radius=30 color=0xff292c35 padding_left=0 padding_right=4
 
 default=(
   padding_left=0
@@ -20,8 +20,6 @@ default=(
   background.padding_right=5
   background.padding_top=0
   background.padding_bottom=0
-  background.border_width=1
-  background.border_color=0xff6B8CA9
   icon.padding_left=8
   icon.padding_right=5
   label.padding_left=5
@@ -30,17 +28,19 @@ default=(
 sketchybar --default "${default[@]}"
 
 # -- Right Side Items --
-sketchybar --add item calendar right \
-  --set calendar icon="󰃰" \
+sketchybar --add item calendar center \
+  --set calendar \
   padding_left=0 \
   update_freq=20 \
-  script="$PLUGIN_DIR/calendar.sh"
-
-source $ITEM_DIR/volume.sh
-source $ITEM_DIR/battery.sh
+  script="$PLUGIN_DIR/calendar.sh" \
+  click_script="$PLUGIN_DIR/calendar_click.sh"
 
 # -- Left Side Items --
 source $ITEM_DIR/aerospace.sh
 source $ITEM_DIR/front_app.sh
+
+# -- Right Side Items --
+source $ITEM_DIR/volume.sh
+source $ITEM_DIR/battery.sh
 
 sketchybar --update

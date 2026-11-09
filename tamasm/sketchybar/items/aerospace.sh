@@ -6,9 +6,8 @@ sketchybar --add item space left \
   --set space \
   background.corner_radius=5 \
   background.height=24 \
-  icon="" \
   background.drawing=on \
   icon.drawing=on \
   padding_right=6 \
-  padding_left=4 \
+  padding_left=0 \
   script="$CONFIG_DIR/plugins/aerospace.sh"
